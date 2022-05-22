@@ -6,68 +6,60 @@ public class password {
 		int mayus = 0;
 		int minus = 0;
 		int num = 0;
-		for(int i = 0; i<contraseña.length(); i++) {
-			if(Character.isUpperCase(contraseña.charAt(i))){
+		for (int i = 0; i < contraseña.length(); i++) {
+			if (Character.isUpperCase(contraseña.charAt(i))) {
 				mayus++;
 			}
-		}//fin for
-		for(int i = 0; i<contraseña.length(); i++) {
-			if(Character.isLowerCase(contraseña.charAt(i))){
+		} // fin for
+		for (int i = 0; i < contraseña.length(); i++) {
+			if (Character.isLowerCase(contraseña.charAt(i))) {
 				minus++;
 			}
-		}//fin for
-		
-		for(int i = 0; i<contraseña.length(); i++) {
-			if(Character.isDigit(contraseña.charAt(i))){
+		} // fin for
+
+		for (int i = 0; i < contraseña.length(); i++) {
+			if (Character.isDigit(contraseña.charAt(i))) {
 				num++;
 			}
-		}//fin for
-		
-		if(mayus >=1) {
+		} // fin for
+
+		if (mayus >= 1) {
 			requisitos++;
 		}
-		if(minus >=2) {
+		if (minus >= 2) {
 			requisitos++;
 		}
 		if (num >= 1) {
 			requisitos++;
 		}
-		
-		if(requisitos >= 3) {
+
+		if (requisitos >= 3) {
 			return true;
-		}else {
-		return false;
+		} else {
+			return false;
 		}
 
-	
+	}// fin metodo
 
-	}//fin metodo
 	public static String generarPassword(int i) {
-        String theAlphaNumericS;
-        StringBuilder builder;
-        
-        theAlphaNumericS = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ"
-                                    + "abcdefghijklmnñopqrstuvwxyz"+
-                                    "0123456789"; 
+		String theAlphaNumericS;
+		StringBuilder builder;
 
-        //create the StringBuffer
-        builder = new StringBuilder(i); 
+		theAlphaNumericS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" + "abcdefghijklmnopqrstuvwxyz" + "0123456789";
 
-        for (int m = 0; m < i; m++) { 
+		// Creo StringBuffer
+		builder = new StringBuilder(i);
 
-            // generate numeric
-            int myindex 
-                = (int)(theAlphaNumericS.length() 
-                        * Math.random()); 
+		for (int m = 0; m < i; m++) {
 
-            // add the characters
-            builder.append(theAlphaNumericS 
-                        .charAt(myindex)); 
-        } 
+			// Genero numericos
+			int myindex = (int) (theAlphaNumericS.length() * Math.random());
 
-        return builder.toString(); 
-    }
-	   
+			// Añado caracteres
+			builder.append(theAlphaNumericS.charAt(myindex));
+		}
+
+		return builder.toString();
+	}
+
 }
-	
-

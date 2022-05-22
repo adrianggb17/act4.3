@@ -6,22 +6,22 @@ public class password2 {
 		int mayus = 0;
 		int minus = 0;
 		int special = 0;
-		for(int i = 0; i<contraseÃ±a.length(); i++) {
-			if(Character.isUpperCase(contraseÃ±a.charAt(i))){
+		for(int i = 0; i<contraseña.length(); i++) {
+			if(Character.isUpperCase(contraseña.charAt(i))){
 				mayus++;
 			}
-		}//end for
-		for(int i = 0; i<contraseÃ±a.length(); i++) {
-			if(Character.isLowerCase(contraseÃ±a.charAt(i))){
+		}//fin for
+		for(int i = 0; i<contraseña.length(); i++) {
+			if(Character.isLowerCase(contraseña.charAt(i))){
 				minus++;
 			}
-		}//end for
+		}//fin for
 		
-		for(int i = 0; i<contraseÃ±a.length(); i++) {
-			if(contraseÃ±a.contains(".") || contraseÃ±a.contains("_") || contraseÃ±a.contains("*") || contraseÃ±a.contains("ï¿½") || contraseÃ±a.contains("ï¿½")){
+		for(int i = 0; i<contraseña.length(); i++) {
+			if(contraseña.contains(".") || contraseña.contains("_") || contraseña.contains("*") || contraseña.contains("ñ") || contraseña.contains("Ñ")){
 				special++;
 			}
-		}//end for
+		}//fin for
 		
 		if(mayus >=1) {
 			requisitos++;
@@ -41,33 +41,27 @@ public class password2 {
 
 	
 
-	}//end metodo
+	}// fin metodo
+
 	public static String generarPassword(int i) {
-        String theAlphaNumericS;
-        StringBuilder builder;
-        
-        theAlphaNumericS = "ABCDEFGHIJKLMNÃ‘OPQRSTUVWXYZ._*ï¿½ï¿½"
-                                    + "abcdefghijklmnÃ±opqrstuvwxyz._*ï¿½ï¿½"; 
+		String theAlphaNumericS;
+		StringBuilder builder;
 
-        //create the StringBuffer
-        builder = new StringBuilder(i); 
+		theAlphaNumericS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ._*ñÑ" + "abcdefghijklmnopqrstuvwxyz._*ñÑ";
 
-        for (int m = 0; m < i; m++) { 
+		// Creo StringBuffer
+		builder = new StringBuilder(i);
 
-            // generate numeric
-            int myindex 
-                = (int)(theAlphaNumericS.length() 
-                        * Math.random()); 
+		for (int m = 0; m < i; m++) {
 
-            // add the characters
-            builder.append(theAlphaNumericS 
-                        .charAt(myindex)); 
-        } 
+			// Genero numericos
+			int myindex = (int) (theAlphaNumericS.length() * Math.random());
 
-        return builder.toString(); 
-    } 
-		
+			// Añado caracteres
+			builder.append(theAlphaNumericS.charAt(myindex));
+		}
 
+		return builder.toString();
+	}
 
-}//end clase
-
+}// fin clase
